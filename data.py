@@ -1,5 +1,6 @@
 from auth import get_auth
 import requests
+import random
 
 
 def get_data():
@@ -11,10 +12,29 @@ def get_data():
     URL = 'https://api.spotify.com/v1/artists/{id}/top-tracks'.format(
         id='6M2wZ9GZgrQXHCFfjv46we')
     data = requests.get(URL + "?market=US", headers=headers)
-    print(data)
 
     data = data.json()
-    print(data)
+
+    # rand = random.randint(0, len(data['tracks']) - 1)
+
+    rand = 2
+
+    artist_names = ''
+
+    for artist in data['tracks'][rand]['artists']:
+
+        artist_names += artist['name'] + ', '
+        print(artist['name'])
+
+    artist_names = artist_names[:-2]
+    song_name = data['tracks'][rand]['name']
+    album_cover = data['tracks'][rand]['album']['images'][0]['url']
+    preview_url = data['tracks'][rand]['preview_url']
+    spotify_url = data['tracks'][rand]['external_urls']['spotify']
+
+    info = [song_name, artist_names, album_cover, preview_url, spotify_url]
+
+    return info
 
 
 if __name__ == '__main__':
