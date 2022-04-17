@@ -1,9 +1,11 @@
+'''This file has the get_data function which fetches data from the Spotify API.'''
 from auth import get_auth
 import requests
 import random
 
 
 def get_data():
+    '''This function gets the data from the Spotify API.'''
     access_token = get_auth()
     headers = {
         'Authorization': 'Bearer {TOKEN}'.format(TOKEN=access_token)
