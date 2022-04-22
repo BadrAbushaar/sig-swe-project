@@ -4,10 +4,9 @@ import requests
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
-PASS = os.getenv("PASSWORD")
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
 AUTH_URL = 'https://accounts.spotify.com/api/token'
 
@@ -21,6 +20,7 @@ def get_auth():
     })
 
     auth_response_data = auth_response.json()
+
     access_token = auth_response_data['access_token']
 
     return access_token
