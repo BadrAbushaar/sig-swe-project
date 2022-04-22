@@ -14,7 +14,7 @@ def hello():
 
     '''Dua Lipa, Kanye, Doja'''
     artist_list = ['6M2wZ9GZgrQXHCFfjv46we',
-                   '5K4W6rqBFWDnAN6FQUkS6x', '5cj0lLjcoR7YOSnhnX0Po5']
+                   '5K4W6rqBFWDnAN6FQUkS6x', '5cj0lLjcoR7YOSnhnX0Po5',  '1Xyo4u8uXC1ZmMpatF05PJ']
 
     rand = random.randint(0, len(artist_list) - 1)
 
